@@ -1,6 +1,6 @@
 # Sistema de Gestión de Clientes y Pedidos
 
-Este proyecto es una aplicación de microservicios full-stack diseñada para gestionar clientes y sus pedidos. Está compuesto por un backend robusto en **Java/Spring Boot**, un frontend en **Angular** (se asume en el entorno completo), y una base de datos **Microsoft SQL Server**. Todo el ecosistema está contenerizado para facilitar su despliegue y desarrollo.
+Este proyecto es una aplicación de microservicios full-stack diseñada para gestionar clientes y sus pedidos. Está compuesto por un backend robusto en **Java/Spring Boot**, un frontend en **Angular** , y una base de datos **Microsoft SQL Server**. Todo el ecosistema está contenerizado para facilitar su despliegue y desarrollo.
 
 ## 🚀 Tecnologías Utilizadas
 
@@ -148,7 +148,7 @@ Para ejecutar las pruebas manualmente, navega a cualquiera de los microservicios
 4. Acceso a los servicios:
    - Backend Auth: `http://localhost:8081`
    - Backend Customer-Order: `http://localhost:8082`
-   - Frontend (si aplica): `http://localhost:4200`
+   - Frontend: `http://localhost:4200`
 
 ### Detener los Servicios
 Para detener y eliminar los contenedores generados:
