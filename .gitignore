@@ -1,0 +1,14 @@
+# Environments
+.env
+
+# IDEs
+.idea/
+.vscode/
+
+# Build
+target/
+*.jar
+*.war
+
+# Logs
+*.log
