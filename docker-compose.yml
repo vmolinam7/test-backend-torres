@@ -30,16 +30,8 @@ services:
     environment:
       - ACCEPT_EULA=Y
       - SA_PASSWORD=${DB_PASSWORD}
-    entrypoint: ["/bin/sh", "-c"]
-    command: >
-      i=0;
-      while [ $$i -lt 30 ]; do
-        /opt/mssql-tools18/bin/sqlcmd -S tcp:sqlserver,1433 -U sa -P "$$SA_PASSWORD" -C
-        -Q "IF DB_ID('auth_db') IS NULL EXEC('CREATE DATABASE auth_db;'); IF DB_ID('customer_order_db') IS NULL EXEC('CREATE DATABASE customer_order_db;');" && exit 0;
-        i=$$((i+1));
-        sleep 2;
-      done;
-      exit 1
+    entrypoint: >
+      /bin/sh -c "i=0; while [ $$i -lt 30 ]; do /opt/mssql-tools18/bin/sqlcmd -S tcp:sqlserver,1433 -U sa -P \"$$SA_PASSWORD\" -C -Q \"IF DB_ID('auth_db') IS NULL EXEC('CREATE DATABASE auth_db;'); IF DB_ID('customer_order_db') IS NULL EXEC('CREATE DATABASE customer_order_db;');\" && exit 0; i=$$((i+1)); sleep 2; done; exit 1"
     restart: "no"
 
   auth-service:
